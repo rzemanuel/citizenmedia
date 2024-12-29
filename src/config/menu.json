@@ -13,13 +13,17 @@
       "url": "/blog"
     },
     {
-      "name": "Pages",
+      "name": "Solutions",
       "url": "",
       "hasChildren": true,
       "children": [
         {
           "name": "Elements",
           "url": "/elements"
+        },
+        {
+          "name": "Media Buying",
+          "url": "/media"
         },
         {
           "name": "Integration",
