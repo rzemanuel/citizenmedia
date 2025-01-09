@@ -82,7 +82,7 @@ const Home = () => {
              <div className="py-2">
                <hr className="h-[1px] border-0 border-b border-border/50 bg-transparent" />
              </div>
-             <ul className="flex flex-wrap gap-x-6 gap-y-2">
+             {/* <ul className="flex flex-wrap gap-x-6 gap-y-2">
                {facility.map((text: string, i: number) => (
                  <li key={i}>
                    <BsCheckLg className="mr-2 inline-block text-2xl text-emerald-400" />
@@ -91,7 +91,7 @@ const Home = () => {
                    </p>
                  </li>
                ))}
-             </ul>
+             </ul> */}
            </div>
            <div className="mx-auto max-w-[600px] pt-24 lg:col-6 lg:pt-0">
              <div className="image-block relative mr-[5.5%] md:mr-6 lg:ml-6">
