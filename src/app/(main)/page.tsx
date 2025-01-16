@@ -12,6 +12,8 @@ import BannerShape from "../../shapes/banner-s-1";
 import BannerShape2 from "../../shapes/banner-s-2";
 import FeatureShape1 from "../../shapes/feature-s-1";
 import FeatureShape2 from "../../shapes/feature-s-2";
+import { BarChart3, Search, Share2, ArrowRight } from 'lucide-react';
+
 
 interface Banner {
  title: string;
@@ -129,9 +131,113 @@ const Home = () => {
        <Line className="line-bg absolute z-20" color="bg-line-yellow" />
      </section>
 
-     <TabContainer {...process} />
+     {/* <TabContainer {...process} /> */}
+     <section className="section relative overflow-hidden before:z-10 after:z-10">
+  <div className="container relative z-30">
+    <div className="text-center mb-16">
+      <h2 className="mb-8 text-[45px] font-bold">Our Areas of Expertise</h2>
+      <p className="mb-6 text-lg text-gray-600 max-w-3xl mx-auto">
+        Pellen tesque in ipsum id orci porta dapibus. titor nibh. Vivamus accumsan tincidunt.
+      </p>
+    </div>
 
-     {feature_post.map((post, i) => (
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Programmatic Advertising */}
+      <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col">
+        <div className="mb-4">
+          <BarChart3 className="h-8 w-8 text-red-400" />
+        </div>
+        
+        <span className="inline-block text-sm font-semibold tracking-wider text-red-400 mb-4">
+          DIGITAL MARKETING
+        </span>
+        
+        <div className="flex items-center space-x-4 mb-6">
+          <div className="w-1 h-12 bg-red-400"></div>
+          <h3 className="text-2xl font-bold">
+            Programmatic Advertising
+          </h3>
+        </div>
+        
+        <p className="text-gray-600 leading-relaxed mb-8">
+          Deliver precision targeting to connect with the right audience at the right time using
+          healthcare-specific programmatic platforms. Our approach includes unique condition-based
+          and HCP targeting capabilities that outperform general market omnichannel DSPs.
+        </p>
+
+        <div className="mt-auto">
+          <Link href="/services/programmatic" className="inline-flex items-center text-red-400 font-semibold hover:text-red-500 transition-colors">
+            Learn More 
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+
+      {/* Search Marketing */}
+      <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col">
+        <div className="mb-4">
+          <Search className="h-8 w-8 text-red-400" />
+        </div>
+        
+        <span className="inline-block text-sm font-semibold tracking-wider text-red-400 mb-4">
+          SEO & SEM
+        </span>
+        
+        <div className="flex items-center space-x-4 mb-6">
+          <div className="w-1 h-12 bg-red-400"></div>
+          <h3 className="text-2xl font-bold">
+            Search Marketing
+          </h3>
+        </div>
+        
+        <p className="text-gray-600 leading-relaxed mb-8">
+          Capture patient intent and ensure your organization ranks prominently in search results
+          with targeted strategies and proven optimization techniques.
+        </p>
+
+        <div className="mt-auto">
+          <Link href="/services/search" className="inline-flex items-center text-red-400 font-semibold hover:text-red-500 transition-colors">
+            Learn More 
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+
+      {/* Social Media Campaigns */}
+      <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col">
+        <div className="mb-4">
+          <Share2 className="h-8 w-8 text-red-400" />
+        </div>
+        
+        <span className="inline-block text-sm font-semibold tracking-wider text-red-400 mb-4">
+          SOCIAL MEDIA
+        </span>
+        
+        <div className="flex items-center space-x-4 mb-6">
+          <div className="w-1 h-12 bg-red-400"></div>
+          <h3 className="text-2xl font-bold">
+            Social Media Campaigns
+          </h3>
+        </div>
+        
+        <p className="text-gray-600 leading-relaxed mb-8">
+          Foster engagement and build trust with strategic, community-focused outreach.
+          Create meaningful connections through targeted social media campaigns.
+        </p>
+
+        <div className="mt-auto">
+          <Link href="/services/social" className="inline-flex items-center text-red-400 font-semibold hover:text-red-500 transition-colors">
+            Learn More 
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Line className="line-bg absolute z-20" color="bg-line-yellow" />
+</section>
+
+   {feature_post.map((post, i) => ( 
        <section
          key={i}
          className="relative z-20 overflow-hidden"
@@ -168,7 +274,7 @@ const Home = () => {
          </div>
          <Line className="line-bg absolute left-0 top-1/2 z-10 flex h-full w-full -translate-y-1/2 justify-between" color="bg-line-sky" />
        </section>
-     ))}
+     ))} 
 
      <section className="section-md articles relative z-20 overflow-hidden after:-z-10">
        <div className="container relative z-30">
