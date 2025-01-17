@@ -166,7 +166,7 @@ const Home = () => {
         </p>
 
         <div className="mt-auto">
-          <Link href="/services/programmatic" className="inline-flex items-center text-red-400 font-semibold hover:text-red-500 transition-colors">
+          <Link href="/programmatic" className="inline-flex items-center text-red-400 font-semibold hover:text-red-500 transition-colors">
             Learn More 
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
@@ -196,7 +196,7 @@ const Home = () => {
         </p>
 
         <div className="mt-auto">
-          <Link href="/services/search" className="inline-flex items-center text-red-400 font-semibold hover:text-red-500 transition-colors">
+          <Link href="/search" className="inline-flex items-center text-red-400 font-semibold hover:text-red-500 transition-colors">
             Learn More 
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
@@ -226,7 +226,7 @@ const Home = () => {
         </p>
 
         <div className="mt-auto">
-          <Link href="/services/social" className="inline-flex items-center text-red-400 font-semibold hover:text-red-500 transition-colors">
+          <Link href="/social" className="inline-flex items-center text-red-400 font-semibold hover:text-red-500 transition-colors">
             Learn More 
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
