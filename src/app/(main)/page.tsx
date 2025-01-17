@@ -104,7 +104,7 @@ const Home = () => {
                  src={images.main}
                  alt="banner"
                />
-               <Image
+               {/* <Image
                  width={211}
                  height={121}
                  className="absolute bottom-16 left-0 w-[40%] rounded-lg shadow-md"
@@ -117,7 +117,7 @@ const Home = () => {
                  className="absolute right-0 top-0 w-[30%] rounded-lg md:-right-32 md:top-14 md:w-[40%] xl:top-36"
                  src={images.right}
                  alt="banner-right"
-               />
+               /> */}
                <div className="pointer-events-none absolute left-[40px] top-[-50px] -z-20 w-[40%] select-none">
                  <BannerShape className="text-secondary" />
                </div>

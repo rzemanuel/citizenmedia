@@ -5,59 +5,26 @@
       "url": "/"
     },
     {
+      "name": "Solutions",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+
+        {
+          "name": "Media Buying",
+          "url": "/programmatic"
+        }
+  
+       
+      ]
+    },
+    {
       "name": "About",
       "url": "/about"
     },
     {
       "name": "Blog",
       "url": "/blog"
-    },
-    {
-      "name": "Solutions",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Elements",
-          "url": "/elements"
-        },
-        {
-          "name": "Media Buying",
-          "url": "/programmatic"
-        },
-        {
-          "name": "Integration",
-          "url": "/integration"
-        },
-        {
-          "name": "Careers",
-          "url": "careers"
-        },
-        {
-          "name": "Pricing",
-          "url": "/pricing"
-        },
-        {
-          "name": "Authors",
-          "url": "/authors"
-        },
-        {
-          "name": "Contact",
-          "url": "/contact"
-        },
-        {
-          "name": "Sign up",
-          "url": "/sign-up"
-        },
-        {
-          "name": "Terms & Conditions",
-          "url": "/terms-conditions"
-        },
-        {
-          "name": "404 Page",
-          "url": "/404"
-        }
-      ]
     }
   ],
   "footer": {
@@ -71,11 +38,8 @@
         {
           "name": "Contact us",
           "url": "/contact"
-        },
-        {
-          "name": "Pricing",
-          "url": "/pricing"
         }
+
       ]
     },
     "resources": {
@@ -84,14 +48,6 @@
         {
           "name": "Blog",
           "url": "/blog"
-        },
-        {
-          "name": "Career",
-          "url": "/career"
-        },
-        {
-          "name": "Terms & Conditions",
-          "url": "/terms-conditions"
         }
       ]
     }
