@@ -1,7 +1,7 @@
 ---
 # Banner
 banner:
-  title: "Empowering Healthcare Marketing with Tailored Paid Media Solutions"
+  title: "Smarter Healthcare Digital Marketing"
   content: "We specialize in innovative paid media strategies designed exclusively for hospitals and healthcare organizations. Let us help you drive measurable outcomes, strengthen your brand, and build lasting connections with your community through targeted, data-driven campaigns."
   images:
     main: "/images/banner/banner-image.jpg"
@@ -63,7 +63,7 @@ features:
 process:
   title: "Our Areas of Expertise"
   subtitle: "EXPERIENCE SPEAKS"
-  description: "Pellen tesque in ipsum id orci porta dapibus. titor nibh. Vivamus accumsan tincidunt."
+  description: "We combine healthcare-specific digital marketing expertise with innovative technology to help organizations connect meaningfully with patients and providers across channels. "
   list:
     - title: "Programmatic Advertising"
       description: "Deliver precision targeting to connect with the right audience at the right time using healthcare-specific programmatic platforms. Our approach includes unique condition-based and HCP targeting capabilities that outperform general market omnichannel DSPs like Trade Desk or DV360, ensuring unparalleled results for healthcare marketers."

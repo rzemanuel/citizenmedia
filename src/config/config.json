@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Spydea | Sass Theme",
+    "title": "Citizen Media",
     "base_url": "https://nextplate.netlify.app",
     "base_path": "/",
     "trailing_slash": false,
@@ -14,7 +14,7 @@
 
   "settings": {
     "sticky_header": true,
-    "theme_switcher": true,
+    "theme_switcher": false,
     "pagination": 3,
     "blog_folder": "blog"
   },
@@ -26,19 +26,19 @@
 
   "contact": {
     "email": "hello@themefisher.com",
-    "phone": "+94746-388817"
+    "phone": ""
   },
 
   "announcement": {
     "message": "Pellen tesque in ipsum id orci porta dapibus. Sed port titor lectus nibh Vivamus.",
-    "enable": true,
+    "enable": false,
     "link": "#",
     "lable": "Learn More"
   },
 
   "navigation_buttons": [
     {
-      "enable": "true",
+      "enable": false,
       "label": "Login",
       "link": "/login"
     },

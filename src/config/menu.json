@@ -13,6 +13,14 @@
         {
           "name": "Media Buying",
           "url": "/programmatic"
+        },
+        {
+          "name": "Search",
+          "url": "/search"
+        },
+        {
+          "name": "Social Media",
+          "url": "/social"
         }
   
        
