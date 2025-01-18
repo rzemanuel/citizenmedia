@@ -3,6 +3,7 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
+import { useEmail } from '@/context/EmailContext';
 
 interface FormValues {
   fname: string;
@@ -20,16 +21,17 @@ const contactSchema = Yup.object().shape({
   message: Yup.string()
 });
 
-const initialValues: FormValues = {
-  fname: "",
-  lname: "",
-  email: "",
-  purpose: "0",
-  message: ""
-};
-
 const ContactForm = () => {
+  const { email } = useEmail();
   const [formStatus, setFormStatus] = useState<{ success?: boolean; error?: string }>({});
+
+  const initialValues: FormValues = {
+    fname: "",
+    lname: "",
+    email: email || "",
+    purpose: "0",
+    message: ""
+  };
 
   const handleSubmit = async (
     values: FormValues,

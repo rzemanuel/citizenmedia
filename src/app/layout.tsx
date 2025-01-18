@@ -4,6 +4,7 @@ import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Providers from "@/partials/Providers";
 import "@/styles/main.scss";
 import "aos/dist/aos.css";
+import { EmailProvider } from '@/context/EmailContext';
 
 export default function RootLayout({
   children,
@@ -43,9 +44,11 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning={true}>
         <TwSizeIndicator />
-        <Providers>
-          {children}
-        </Providers>
+        <EmailProvider>
+          <Providers>
+            {children}
+          </Providers>
+        </EmailProvider>
       </body>
     </html>
   );

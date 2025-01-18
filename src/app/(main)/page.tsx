@@ -13,6 +13,7 @@ import BannerShape2 from "../../shapes/banner-s-2";
 import FeatureShape1 from "../../shapes/feature-s-1";
 import FeatureShape2 from "../../shapes/feature-s-2";
 import { BarChart3, Search, Share2, ArrowRight } from 'lucide-react';
+import EmailQuoteForm from "../../components/EmailQuoteForm";
 
 
 interface Banner {
@@ -71,16 +72,7 @@ const Home = () => {
              <p className="mb-6 text-lg"
                 dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
              />
-             <form className="my-10 flex w-full max-w-[600px] flex-col justify-between rounded-md bg-white p-[6px] shadow-md sm:flex-row">
-               <input
-                 type="search"
-                 className="w-full border-0 bg-transparent p-4 pl-6 text-center text-base placeholder:text-neutral-400 focus:border-0 focus:ring-0 sm:text-left"
-                 placeholder="Enter Your Email Address"
-               />
-               <button type="submit" className="btn btn-primary btn-md">
-                 Get A Quote
-               </button>
-             </form>
+             <EmailQuoteForm />
              <div className="py-2">
                <hr className="h-[1px] border-0 border-b border-border/50 bg-transparent" />
              </div>
