@@ -10,7 +10,7 @@ const ImageFrame = ({ imagePath, alt, variant = 1 }) => {
       <div className="relative w-full h-full">
         <svg className="absolute -top-8 -right-8 w-24 h-24 text-emerald-300/40" viewBox="0 0 100 100">
           <path d="M50,10 Q80,10 90,40 Q100,70 70,90 Q40,100 10,70 Q0,40 30,10" fill="currentColor"/>
-        </svg>
+        </svg> 
         <svg className="absolute -bottom-6 -left-6 w-20 h-20 text-rose-300/40" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" fill="currentColor"/>
         </svg>
@@ -161,7 +161,7 @@ export default function Page() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Healthcare Marketing?</h2>
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
@@ -171,7 +171,7 @@ export default function Page() {
             Get Started Today
           </button>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

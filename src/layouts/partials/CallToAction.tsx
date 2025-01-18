@@ -22,14 +22,14 @@ const CallToAction = ({ callToAction }: { callToAction: Call_to_action }) => {
             >
               {frontmatter.title}
             </h2>
-            <span
+            {/* <span
               className="inline-block align-middle text-[20px] font-bold text-dark"
               data-aos="fade-up-sm"
               data-aos-delay="50"
             >
               {frontmatter.support.lable}
-            </span>
-            <ul className="mx-auto mt-2 flex w-fit flex-row gap-8 align-middle text-[28px] sm:ml-7 sm:mt-0 sm:inline-flex">
+            </span> */}
+            {/* <ul className="mx-auto mt-2 flex w-fit flex-row gap-8 align-middle text-[28px] sm:ml-7 sm:mt-0 sm:inline-flex">
               {frontmatter.support?.list.map(({ icon, link }, i) => {
                 return (
                   <li
@@ -44,7 +44,7 @@ const CallToAction = ({ callToAction }: { callToAction: Call_to_action }) => {
                   </li>
                 );
               })}
-            </ul>
+            </ul> */}
             <div
               className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 sm:justify-start sm:gap-8"
               data-aos="fade-up-sm"

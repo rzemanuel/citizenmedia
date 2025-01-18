@@ -20,7 +20,7 @@ const Footer = ({
   hasCallToAction: boolean;
 }) => {
   const { copyright } = config.params;
-  const { email, phone } = config.contact;
+  // const { email, phone } = config.contact;
   const { company, resources } = menu.footer;
 
   return (
@@ -52,7 +52,7 @@ const Footer = ({
             </a>
           </div>
           {/* <!-- End Site Logo --> */}
-          <div className="pt-10 lg:col-6 lg:pt-0">
+          {/* <div className="pt-10 lg:col-6 lg:pt-0">
             <form className="mx-auto flex w-full max-w-[600px] flex-col justify-between rounded-md bg-white p-[6px] sm:flex-row lg:ml-auto lg:mr-0 lg:max-w-full">
               <input
                 type="search"
@@ -63,7 +63,7 @@ const Footer = ({
                 Get A Quote
               </button>
             </form>
-          </div>
+          </div> */}
           {/* <!-- End Newletter --> */}
         </div>
         {/* <!-- End Footer First Row --> */}
@@ -101,7 +101,7 @@ const Footer = ({
             </div>
           </div>
           {/* <!-- End Footer Widget --> */}
-          <div className="sm:col-6 md:col-4 lg:col-4 xl:col-3">
+          {/* <div className="sm:col-6 md:col-4 lg:col-4 xl:col-3">
             <div className="widget lg:pl-8">
               <h3 className="widget-title">Email</h3>
               <div className="mx-auto -mt-1 mb-4 w-fit text-[22px] font-bold text-amber-400 transition-all duration-300 hover:underline hover:underline-offset-4 sm:mx-0">
@@ -110,19 +110,19 @@ const Footer = ({
               <Social
                 source={social.main}
                 className="social-icons justify-center sm:justify-start"
-              />
+              /> */}
               {/* <!-- End Social Icons --> */}
-            </div>
-          </div>
+            {/* </div>
+          </div> */}
           {/* <!-- End Footer Widget --> */}
-          <div className="sm:col-6 md:col-6 lg:col-3 xl:col-3">
+          {/* <div className="sm:col-6 md:col-6 lg:col-3 xl:col-3">
             <div className="xl:pl-16">
               <h3 className="widget-title">Call US</h3>
               <div className="mx-auto -mt-1 w-fit text-[22px] font-bold text-amber-400 transition-all duration-300 hover:underline hover:underline-offset-4 sm:mx-0">
                 <a href={`tel:${phone}`}>{phone}</a>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* <!-- End Footer Widget --> */}
         </div>
         {/* <!-- End Footer First Row --> */}
