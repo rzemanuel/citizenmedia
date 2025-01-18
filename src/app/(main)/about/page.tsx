@@ -4,13 +4,21 @@ import SeoMeta from "@/partials/SeoMeta";
 import Image from "next/image";
 import { BsCheckCircle } from "react-icons/bs";
 
-const ImageFrame = ({ imagePath, alt, variant = 1 }) => {
+type FrameVariant = 1 | 2 | 3;
+
+interface ImageFrameProps {
+  imagePath: string;
+  alt: string;
+  variant?: FrameVariant;
+}
+
+const ImageFrame = ({ imagePath, alt, variant = 1 }: ImageFrameProps) => {
   const frames = {
     1: (
       <div className="relative w-full h-full">
         <svg className="absolute -top-8 -right-8 w-24 h-24 text-emerald-300/40" viewBox="0 0 100 100">
           <path d="M50,10 Q80,10 90,40 Q100,70 70,90 Q40,100 10,70 Q0,40 30,10" fill="currentColor"/>
-        </svg> 
+        </svg>
         <svg className="absolute -bottom-6 -left-6 w-20 h-20 text-rose-300/40" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" fill="currentColor"/>
         </svg>
@@ -118,7 +126,7 @@ export default function Page() {
                 <ImageFrame 
                   imagePath={section.image}
                   alt={section.alt}
-                  variant={(index % 3) + 1}
+                  variant={((index % 3) + 1) as 1 | 2 | 3}
                 />
               </div>
               <div className="lg:w-1/2">

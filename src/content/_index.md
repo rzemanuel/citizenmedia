@@ -1,7 +1,7 @@
 ---
 # Banner
 banner:
-  title: "Smarter Healthcare Digital Marketing"
+  title: "Digital Marketing Built for Healthcare Leaders"
   content: "We specialize in innovative paid media strategies designed exclusively for hospitals and healthcare organizations. Let us help you drive measurable outcomes, strengthen your brand, and build lasting connections with your community through targeted, data-driven campaigns."
   images:
     main: "/images/banner/banner-image.jpg"
@@ -98,9 +98,9 @@ feature_post:
     description: "As a trusted partner to healthcare providers nationwide, we combine deep industry expertise with advanced marketing innovation. Our tailored solutions in programmatic advertising, search, and social media deliver transformational results that align with your organization’s goals."
     image: "/images/feature-1.png"
 
-  - title: "Choose the Right Plan for Your Team"
+  - title: "Zero Waste Marketing: Every Dollar Drives Impact"
     subtitle: "COLLABORATIVE SOLUTIONS"
-    description: "Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Proin eget elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Proin eget tortor risus."
+    description: "Our Zero Waste Marketing approach ensures every dollar of your campaign budget delivers measurable results. By continuously analyzing performance data and optimizing in real-time, we eliminate ineffective spending while amplifying successful strategies. Through precision targeting, strategic budget allocation, and advanced analytics, we maximize your ROI across all channels. Our optimization process identifies the highest-performing tactics, allowing us to refine audiences, adjust creative elements, and reallocate resources to the most effective campaigns - ensuring your marketing investment generates maximum impact."
     image: "/images/feature-2.png"
 
 #Blog

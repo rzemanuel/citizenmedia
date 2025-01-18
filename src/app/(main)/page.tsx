@@ -137,7 +137,7 @@ const Home = () => {
     <div className="text-center mb-16">
       <h2 className="mb-8 text-[45px] font-bold">Our Areas of Expertise</h2>
       <p className="mb-6 text-lg text-gray-600 max-w-3xl mx-auto">
-        Pellen tesque in ipsum id orci porta dapibus. titor nibh. Vivamus accumsan tincidunt.
+      We specialize in innovative paid media strategies designed exclusively for hospitals and healthcare organizations, helping you drive measurable outcomes, strengthen your brand.
       </p>
     </div>
 
