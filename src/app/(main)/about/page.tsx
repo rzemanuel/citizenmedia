@@ -1,207 +1,177 @@
-import Social from "@/components/Social";
-import Line from "@/components/line";
-import { getListPage, getSinglePage } from "@/lib/contentParser";
-import CounterWrapper from "@/partials/Counter-Wrapper";
-import OpenPositions from "@/partials/OpenPositions";
-import PageHeader from "@/partials/PageHeader";
+'use client';
+
 import SeoMeta from "@/partials/SeoMeta";
-import AboutShape1 from "@/shapes/about-s-1";
-import AboutShape2 from "@/shapes/about-s-2";
-import AboutShape3 from "@/shapes/about-s-3";
-import TeamMemberShape1 from "@/shapes/team-member-s-1";
-import TeamMemberShape2 from "@/shapes/team-member-s-2";
-import { About, OpenPosition } from "@/types";
 import Image from "next/image";
+import { BsCheckCircle } from "react-icons/bs";
 
-const About = () => {
-  const allPositions: OpenPosition[] = getSinglePage("careers");
-  const removeDrafts = allPositions.filter(
-    (position) => !position.frontmatter.draft,
-  );
-  const data: About = getListPage("about/index.md");
-  const careerIndex = getListPage("careers/_index.md");
+const ImageFrame = ({ imagePath, alt, variant = 1 }) => {
+  const frames = {
+    1: (
+      <div className="relative w-full h-full">
+        <svg className="absolute -top-8 -right-8 w-24 h-24 text-emerald-300/40" viewBox="0 0 100 100">
+          <path d="M50,10 Q80,10 90,40 Q100,70 70,90 Q40,100 10,70 Q0,40 30,10" fill="currentColor"/>
+        </svg>
+        <svg className="absolute -bottom-6 -left-6 w-20 h-20 text-rose-300/40" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="currentColor"/>
+        </svg>
+        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+          <Image
+            src={imagePath}
+            alt={alt}
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+    ),
+    2: (
+      <div className="relative w-full h-full">
+        <div className="absolute inset-0 bg-primary/5 rounded-2xl transform translate-x-4 translate-y-4"></div>
+        <div className="absolute inset-0 bg-secondary/5 rounded-2xl transform -translate-x-2 -translate-y-2"></div>
+        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+          <Image
+            src={imagePath}
+            alt={alt}
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+    ),
+    3: (
+      <div className="relative w-full h-full">
+        <svg className="absolute -top-4 -right-4 w-full h-full text-rose-300/30" viewBox="0 0 100 100">
+          <rect x="70" y="0" width="30" height="100" fill="currentColor"/>
+        </svg>
+        <svg className="absolute -bottom-4 -left-4 w-32 h-32 text-yellow-200/40" viewBox="0 0 100 100">
+          <polygon points="0,100 100,100 0,0" fill="currentColor"/>
+        </svg>
+        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+          <Image
+            src={imagePath}
+            alt={alt}
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+    )
+  };
 
-  const { frontmatter } = data;
-  const { title, meta_title, description, image, funfacts, team, goals } =
-    frontmatter;
+  return frames[variant] || frames[1];
+};
+
+export default function Page() {
+  const content = {
+    sections: [
+      {
+        title: "Who We Are",
+        text: "Citizen Media Group is a trusted partner for hospitals and healthcare organizations, offering cutting-edge paid media solutions. Our mission is to amplify your message, enhance patient engagement, and deliver measurable outcomes that drive your success.",
+        image: "/images/banner/banner-image.jpg",
+        alt: "Team members collaborating on healthcare marketing strategy"
+      },
+      {
+        title: "Our Approach",
+        text: "We combine deep industry knowledge with innovative digital marketing strategies. By understanding the unique challenges and regulations of the healthcare sector, we ensure every campaign is compliant, impactful, and aligned with your organizational goals.",
+        image: "/images/banner/banner-image.jpg",
+        alt: "Healthcare marketing specialists analyzing campaign data"
+      },
+      {
+        title: "Our Team",
+        text: "Our team consists of marketing experts, data analysts, and healthcare specialists who work collaboratively to create campaigns that resonate with your audience and deliver unparalleled results.",
+        image: "/images/banner/banner-image.jpg",
+        alt: "Citizen Media Group team members in a strategic planning session"
+      }
+    ],
+    values: [
+      "Excellence in execution",
+      "Commitment to healthcare",
+      "Transparency, integrity, and trust",
+      "Driving measurable impact"
+    ]
+  };
 
   return (
     <>
-      <SeoMeta
-        title={title}
-        meta_title={meta_title}
-        image={image}
-        description={description}
-      />
-      <PageHeader title={title} description={description} />
-      <section className="section relative z-20 mt-[-26rem] overflow-hidden">
-        <div className="container relative">
-          <div data-aos="fade-up-sm" data-aos-delay="150" className="row">
-            <div className="md:col-6 lg:translate-x-24">
-              <div className="max-w-[670px] rounded-[15px] border-[6px] border-white bg-white sm:border-[12px] lg:rotate-[-4deg]">
-                <Image
-                  width={608}
-                  height={472}
-                  className="w-full rounded-[15px] object-cover"
-                  src="/images/about-1.jpg"
-                  alt="gallery"
-                />
-              </div>
-            </div>
-            <div className="md:col-6 lg:-translate-x-24 lg:pt-36">
-              <div className="relative z-10 max-w-[670px] rounded-[15px] border-[6px] border-white bg-white sm:border-[12px] lg:rotate-[8deg]">
-                <Image
-                  width={608}
-                  height={472}
-                  className="w-full rounded-[15px] object-cover"
-                  src="/images/about-2.jpg"
-                  alt="gallery"
-                />
-              </div>
-            </div>
-          </div>
-          {/* <!-- Start Shape background --> */}
-          <div
-            className="pointer-events-none absolute left-[-14%] top-[-7%] -z-10 hidden select-none md:block lg:left-0"
-            data-aos="fade-right-sm"
-            data-aos-delay="150"
-          >
-            <AboutShape1 className="text-tertiary" />
-          </div>
-          <div
-            className="pointer-events-none absolute right-0 top-0 -z-10 hidden select-none md:block lg:right-[30%]"
-            data-aos="fade-left-sm"
-            data-aos-delay="150"
-          >
-            <AboutShape2 className="text-quaternary" />
-          </div>
-          <div
-            className="pointer-events-none absolute bottom-[-16%] right-[35%] -z-10 hidden select-none md:block"
-            data-aos="fade-down-sm"
-            data-aos-delay="150"
-          >
-            <AboutShape3 className="text-secondary" />
-          </div>
-          {/* <!-- End background Lines --> */}
-        </div>
-      </section>
-      {/* <!-- End About gallery --> */}
-
-      {/* <!-- About vision --> */}
-      <section className="section relative z-20">
-        <div className="container">
-          <div className="row gy-4">
-            {goals.map((goal, i) => {
-              return (
-                <div key={i} data-aos="fade-left-sm" className="lg:col-6">
-                  <span className="mb-6 inline-block font-medium uppercase text-red-400">
-                    {goal.subtitle}
-                  </span>
-                  <div className="border-l-2 border-dark border-opacity-50 py-2 pl-6">
-                    <h2 className="font-semibold">{goal.title}</h2>
-                  </div>
-                </div>
-              );
-            })}
+      <SeoMeta title="About Us | Citizen Media Group" />
+      
+      {/* Hero Section */}
+      <section className="py-24 bg-gradient-to-br from-indigo-50 via-white to-indigo-50">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+              About Us
+            </h1>
+            <p className="text-xl text-gray-700">
+              We're dedicated to transforming healthcare marketing through innovative digital solutions.
+            </p>
           </div>
         </div>
       </section>
-      {/* <!-- End About Vision --> */}
-      <CounterWrapper {...funfacts} />
 
-      <section className="section-lg has-bg-shape team-member relative z-20 overflow-hidden">
-        <div className="container relative z-20">
-          <div className="row items-end justify-between">
-            <div data-aos="fade-up-sm" className="lg:col-8 xl:col-6">
-              <span
-                className="mb-6 inline-block font-medium uppercase text-red-400"
-                data-aos="fade-up-sm"
-                data-aos-delay="50"
+      {/* Alternating Sections */}
+      {content.sections.map((section, index) => (
+        <section key={index} className={`py-20 ${index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}`}>
+          <div className="container max-w-6xl mx-auto px-4">
+            <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
+              <div className="lg:w-1/2">
+                <ImageFrame 
+                  imagePath={section.image}
+                  alt={section.alt}
+                  variant={(index % 3) + 1}
+                />
+              </div>
+              <div className="lg:w-1/2">
+                <h2 className="text-4xl font-bold mb-6">{section.title}</h2>
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  {section.text}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Values Section */}
+      <section className="py-20 bg-gradient-to-br from-indigo-50 via-white to-indigo-50">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">Our Values</h2>
+            <p className="text-xl text-gray-700">
+              The principles that guide everything we do
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {content.values.map((value, index) => (
+              <div 
+                key={index}
+                className="p-6 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300"
               >
-                {team.subtitle}
-              </span>
-              <div className="mb-8 border-l-2 border-dark border-opacity-50 py-2 pl-6 lg:mb-0">
-                <h2
-                  className="font-semibold"
-                  data-aos="fade-up-sm"
-                  data-aos-delay="100"
-                >
-                  {team.title}
-                </h2>
-              </div>
-            </div>
-            <div
-              data-aos="fade-right-sm"
-              data-aos-delay="150"
-              className="col-auto"
-            >
-              {team.button.enable && (
-                <a href={team.button.link} className="btn btn-primary btn-md">
-                  {team.button.label}
-                </a>
-              )}
-            </div>
-          </div>
-          <div className="row gy-4 pt-16">
-            {team.members.map((member, i) => {
-              return (
-                <div
-                  key={i}
-                  data-aos="fade-up-sm"
-                  data-aos-delay={`${50 + i * 50}`}
-                  className="md:col-6 lg:col-4 xl:col-3"
-                >
-                  <div className="shadow-default overflow-hidden rounded-xl bg-white p-3 pb-0 transition-all duration-300 hover:-translate-y-1">
-                    <div className="h-full max-h-[900px] w-full">
-                      <Image
-                        width={280}
-                        height={205}
-                        src={member.avatar}
-                        alt="Virtual Reality for Training"
-                        className="h-full w-full rounded-xl rounded-b-none object-cover"
-                      />
-                    </div>
-                    <div className="px-5 py-8">
-                      <h3 className="mb-4 text-xl font-semibold text-dark sm:text-2xl">
-                        {member.name}
-                      </h3>
-                      <p>{member.content}</p>
-                      <Social
-                        source={member.socials}
-                        className="social-icons-author mt-5 flex flex-wrap items-center gap-4 font-secondary text-dark"
-                      />
-                    </div>
-                  </div>
+                <div className="flex items-center justify-center mb-4">
+                  <BsCheckCircle className="text-3xl text-primary" />
                 </div>
-              );
-            })}
+                <p className="text-lg font-medium text-center text-gray-800">
+                  {value}
+                </p>
+              </div>
+            ))}
           </div>
-
-          {/* <!-- Start Bg Shape --> */}
-          <div
-            data-aos="fade-right-sm"
-            className="pointer-events-none absolute right-[-8%] top-[17%] -z-10 hidden select-none lg:block"
-          >
-            <TeamMemberShape1 className="text-quaternary" />
-          </div>
-          <div
-            data-aos="fade-left-sm"
-            className="pointer-events-none absolute bottom-[8%] left-[-6%] -z-10 hidden select-none lg:block"
-          >
-            <TeamMemberShape2 className="text-quinary" />
-          </div>
-          {/* <!-- End Bg Shape --> */}
         </div>
-
-        <Line
-          color="bg-line-sky"
-          className="line-bg absolute left-0 top-1/2 z-10 flex h-full w-full -translate-y-1/2 justify-between"
-        />
       </section>
-      {/* <!-- End Team Member Section --> */}
-      <OpenPositions {...careerIndex.frontmatter} removeDrafts={removeDrafts} />
+
+      {/* Call to Action */}
+      <section className="py-20">
+        <div className="container max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Healthcare Marketing?</h2>
+          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+            Partner with us to create impactful, compliant, and results-driven marketing campaigns.
+          </p>
+          <button className="px-8 py-4 bg-primary text-white rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors">
+            Get Started Today
+          </button>
+        </div>
+      </section>
     </>
   );
-};
-
-export default About;
+}
