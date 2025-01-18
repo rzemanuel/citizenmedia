@@ -2,6 +2,7 @@
 
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
+import { useState } from "react";
 
 interface FormValues {
   fname: string;
@@ -28,9 +29,11 @@ const initialValues: FormValues = {
 };
 
 const ContactForm = () => {
+  const [formStatus, setFormStatus] = useState<{ success?: boolean; error?: string }>({});
+
   const handleSubmit = async (
     values: FormValues,
-    { setSubmitting, resetForm, setStatus }: FormikHelpers<FormValues>
+    { setSubmitting, resetForm }: FormikHelpers<FormValues>
   ) => {
     try {
       const response = await fetch("/api/contact", {
@@ -42,13 +45,13 @@ const ContactForm = () => {
       const data = await response.json();
       
       if (data.success) {
-        setStatus({ success: true });
+        setFormStatus({ success: true });
         resetForm();
       } else {
-        setStatus({ success: false, error: data.error });
+        setFormStatus({ success: false, error: data.error });
       }
     } catch (error) {
-      setStatus({ success: false, error: "Failed to submit form" });
+      setFormStatus({ success: false, error: "Failed to submit form" });
     }
     setSubmitting(false);
   };
@@ -63,7 +66,7 @@ const ContactForm = () => {
         validationSchema={contactSchema}
         onSubmit={handleSubmit}
       >
-        {({ isSubmitting, status }) => (
+        {({ isSubmitting }) => (
           <Form className="row gy-4 text-dark">
             <div className="sm:col-6">
               <label htmlFor="fname" className="form-label">
@@ -135,14 +138,18 @@ const ContactForm = () => {
               />
               <ErrorMessage name="message" component="div" className="text-red-500 text-sm mt-1" />
             </div>
-            {status?.success && (
+            {formStatus.success && (
               <div className="col-12">
-                <div className="text-green-500">Form submitted successfully!</div>
+                <div className="bg-green-50 text-green-600 px-4 py-3 rounded-lg text-center font-medium">
+                  Form submitted successfully! We'll be in touch soon.
+                </div>
               </div>
             )}
-            {status?.error && (
+            {formStatus.error && (
               <div className="col-12">
-                <div className="text-red-500">{status.error}</div>
+                <div className="bg-red-50 text-red-600 px-4 py-3 rounded-lg text-center font-medium">
+                  {formStatus.error}
+                </div>
               </div>
             )}
             <div className="col-12 text-right">
