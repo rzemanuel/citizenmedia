@@ -13,7 +13,8 @@ export async function POST(request: Request) {
     const properties = {
       email,
       firstname: fname,
-      lastname: lname
+      lastname: lname,
+      form_source: 'website'
     };
 
     try {
