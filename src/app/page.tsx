@@ -1,5 +1,5 @@
 import Gone from "./_Gone";
 
-export default function NotFound() {
+export default function Home() {
   return <Gone />;
 }
